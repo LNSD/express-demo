@@ -11,8 +11,8 @@ app.use(logger('dev'));
 app.use(bodyparser.json()); // support json encoded bodies
 app.use(bodyparser.urlencoded({ extended: true })); // support encoded bodies
 
-app.engine('handlebars', handlebars({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
+app.engine('.hbs', handlebars({defaultLayout: 'main', extname: '.hbs'}));
+app.set('view engine', '.hbs');
 
 // Register simple HTTP GET route for /
 app.get('/', function(req, res){

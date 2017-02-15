@@ -2,6 +2,7 @@
 
 import gulp from 'gulp';
 import gutil from 'gulp-util';
+import seq from 'gulp-sequence';
 import babel from 'gulp-babel';
 import sass from 'gulp-sass';
 import del from 'del';
@@ -25,4 +26,4 @@ gulp.task('clean:app', function () {
 gulp.task('clean', ['clean:app']);
 gulp.task('build', ['build:babel', 'copy:views']);
 
-gulp.task('default', ['clean', 'build']);
+gulp.task('default', seq('clean', 'build'));

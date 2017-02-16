@@ -23,6 +23,8 @@
     "gulp-sourcemaps": "^2.4.1",
     "gulp-uglify": "^2.0.1",
     "gulp-util": "^3.0.8",
+    "gulp-watch": "^4.3.11",
+    "merge-stream": "^1.0.1",
     "nodemon": "^1.11.0"
   },
   "dependencies": {

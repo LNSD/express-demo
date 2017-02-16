@@ -1,4 +1,3 @@
-import path from 'path';
 import express from 'express';
 import bodyparser from 'body-parser';
 import logger from 'morgan';
@@ -15,13 +14,14 @@ app.engine('.hbs', handlebars({defaultLayout: 'main', extname: '.hbs'}));
 app.set('view engine', '.hbs');
 
 // Register simple HTTP GET route for /
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
     // Send status 200 and render content. Content, in this case, is a non-existent template.
     // For me, rendering the layout is important.
     res.status(200).render('home');
 });
 
 // Set the server port to 3000, and log the message when the server is ready.
-app.listen(3000, function(){
-    console.log('Server is listening at localhost:3000');
+app.listen(8080, function() {
+    console.log('Server is listening at localhost:8080');
 });
+

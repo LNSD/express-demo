@@ -19,17 +19,17 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-nodemon": "^2.2.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sequence": "^0.4.6",
     "gulp-sourcemaps": "^2.4.1",
     "gulp-uglify": "^2.0.1",
     "gulp-util": "^3.0.8",
-    "gulp-watch": "^4.3.11",
     "jquery": "^3.1.1",
     "lodash": "^4.17.4",
-    "merge-stream": "^1.0.1",
-    "nodemon": "^1.11.0"
+    "merge-stream": "^1.0.1"
   },
   "dependencies": {
     "body-parser": "^1.16.1",

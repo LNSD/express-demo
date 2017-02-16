@@ -15,9 +15,12 @@ app.set('view engine', '.hbs');
 
 // Register simple HTTP GET route for /
 app.get('/', function(req, res) {
-    // Send status 200 and render content. Content, in this case, is a non-existent template.
-    // For me, rendering the layout is important.
-    res.status(200).render('home');
+    // Send status 200 and render index.
+    res.status(200).render('index');
+});
+
+app.post('/', function(req, res){
+    res.render('welcome', { name: req.body.name});
 });
 
 // Set the server port to 3000, and log the message when the server is ready.

@@ -1,19 +1,15 @@
 <header>
-    <h1>Welcome to this <img src="media/expressjs.png"/> demo</h1>
+    <h1>Welcome to this<img id="logo" src="media/expressjs.png"/>demo</h1>
+    <h2>Please insert your <span class="bold">name</span> and your <span class="bold">birth date</span></h2>
 </header>
 
-<form id="register" method="post" action="/">
+<form id="register" class="card" method="post" action="/">
+    <label>Name <span class="mandatory">*</span></label>
     <input type="text" name="name">
-    <div class="input-group">
-        <span class="input-group-addon">
-            <select name="birthday[month]" class="form-control input-sm"></select>
-        </span>
-        <span class="input-group-addon">
-            <select name="birthday[day]" class="form-control input-sm"></select>
-        </span>
-        <span class="input-group-addon">
-            <select name="birthday[year]" class="form-control input-sm"></select>
-        </span>
-    </div>
-    <input type="submit" value="Submit">
+    <label>Birth date <span class="mandatory">*</span></label>
+    <input id="birthday" name="birthday" />
+    <hr>
+    <input type="submit" class="btn btn-primary" value="Go!">
 </form>
+
+<script src="js/index.js"></script>

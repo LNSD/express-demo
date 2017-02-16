@@ -36,6 +36,7 @@
     "bootstrap-birthday": "git+https://git@github.com/lonalore/bootstrap-birthday.git",
     "express": "^4.14.1",
     "express-handlebars": "^3.0.0",
+    "moment": "^2.17.1",
     "morgan": "^1.8.1"
   }
 }

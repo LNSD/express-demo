@@ -49,15 +49,12 @@ gulp.task('build:styles', function () {
 
 const vendorJS = [
     './node_modules/jquery/dist/jquery.js',
-    './node_modules/bootstrap-sass/assets/javascripts/*.js'
+    './node_modules/bootstrap-sass/assets/javascripts/*.js',
+    './node_modules/bootstrap-birthday/dist/bootstrap-birthday.js'
 ];
-gulp.task('build:scripts', function () {
-    const es6 = gulp.src('src/scripts/*.js')
-                    .pipe(sourcemaps.init())
-                    .pipe(babel());
-    const vendor = gulp.src(vendorJS);
-
-    return merge(es6, vendor)
+gulp.task('build:scripts:vendor', function () {
+    return gulp.src(vendorJS)
+        .pipe(sourcemaps.init())
         .pipe(concat('bundle.js'))
         //only uglify if gulp is ran with '--type production'
         .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop())
@@ -66,8 +63,21 @@ gulp.task('build:scripts', function () {
         .pipe(livereload());
 });
 
+gulp.task('build:scripts:index', function () {
+    return gulp.src('src/scripts/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(babel())
+        //only uglify if gulp is ran with '--type production'
+        .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop())
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('dist/assets/js'))
+        .pipe(livereload());
+});
+gulp.task('build:scripts', ['build:scripts:vendor','build:scripts:index']);
+
+
 gulp.task('copy:media', function () {
-    return gulp.src('src/media/**/*.{jpg,jpeg,png}')
+    return gulp.src('src/media/**/*.{jpg,jpeg,png,gif}')
         .pipe(gulp.dest('dist/assets/media'))
         .pipe(livereload());
 });

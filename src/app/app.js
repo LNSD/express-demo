@@ -3,6 +3,7 @@ import express from 'express';
 import bodyparser from 'body-parser';
 import logger from 'morgan';
 import handlebars from 'express-handlebars';
+import moment from 'moment';
 
 const port = process.env.PORT || 8080;
 const app = express();
@@ -23,15 +24,15 @@ app.engine('.hbs', handlebars({
 app.set('view engine', '.hbs');
 
 
-// Register simple HTTP GET route for /
 app.get('/', function(req, res) {
     // Send status 200 and render index.
     res.status(200).render('index');
 });
 
-// Register simple HTTP POST route for /
 app.post('/', function(req, res){
-    res.render('welcome', { name: req.body.name});
+    const name = req.body.name;
+    const age = moment().diff(moment(req.body.birthday[0], 'YYYY-MM-DD'), 'years');
+    res.render('welcome', { name, age });
 });
 
 

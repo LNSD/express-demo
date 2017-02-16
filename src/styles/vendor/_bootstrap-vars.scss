@@ -1,0 +1,7 @@
+// Bootstrap
+$grid-gutter-width: 20px;
+$container-tablet: (720px + $grid-gutter-width);
+$container-desktop: (900px + $grid-gutter-width);
+$container-large-desktop: (900px + $grid-gutter-width);
+
+@import "bootstrap/variables";

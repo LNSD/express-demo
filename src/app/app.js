@@ -1,3 +1,4 @@
+import path from 'path';
 import express from 'express';
 import bodyparser from 'body-parser';
 import logger from 'morgan';
@@ -9,6 +10,8 @@ app.use(logger('dev'));
 
 app.use(bodyparser.json()); // support json encoded bodies
 app.use(bodyparser.urlencoded({ extended: true })); // support encoded bodies
+
+app.use(express.static('assets'));
 
 app.engine('.hbs', handlebars({defaultLayout: 'main', extname: '.hbs'}));
 app.set('view engine', '.hbs');

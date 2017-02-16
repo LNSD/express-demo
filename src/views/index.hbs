@@ -1,8 +1,19 @@
 <header>
-    <h1>Bodyparser and Handlebars</h1>
+    <h1>Welcome to this <img src="media/expressjs.png"/> demo</h1>
 </header>
 
-<form method="post" action="/">
+<form id="register" method="post" action="/">
     <input type="text" name="name">
+    <div class="input-group">
+        <span class="input-group-addon">
+            <select name="birthday[month]" class="form-control input-sm"></select>
+        </span>
+        <span class="input-group-addon">
+            <select name="birthday[day]" class="form-control input-sm"></select>
+        </span>
+        <span class="input-group-addon">
+            <select name="birthday[year]" class="form-control input-sm"></select>
+        </span>
+    </div>
     <input type="submit" value="Submit">
 </form>

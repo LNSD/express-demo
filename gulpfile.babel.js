@@ -100,7 +100,7 @@ gulp.task('watch', function () {
     gulp.watch('src/scripts/*.js', ['build:scripts']);
 });
 
-gulp.task('server', function () {
+gulp.task('serve', function () {
     nodemon({
         'script': 'dist/app.js',
     });
@@ -109,5 +109,5 @@ gulp.task('server', function () {
 gulp.task('clean', ['clean:dist']);
 gulp.task('build', ['build:app', 'copy:views', 'build:styles', 'build:scripts', 'copy:media', 'copy:fonts']);
 
-gulp.task('develop', seq('clean', 'build', ['server', 'watch']));
+gulp.task('develop', seq('clean', 'build', ['serve', 'watch']));
 gulp.task('default', seq('clean', 'build'));
